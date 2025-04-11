@@ -1,52 +1,53 @@
 "use client";
+
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import {
   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
-import { usePathname } from "next/navigation";
+import CategoryBar from "./CategoryBar";
+import CarsandMinivan from "./CarsandMinivan";
+import { setProducts } from "@/app/store/features/productSlice";
+import { AppDispatch } from "@/app/store/store";
 
 export default function NavigationMenuBar() {
-  const pathName = usePathname();
-  const navLinks = [
-    {
-      name: "Vehicles",
-    },
-    {
-      name: "Shipping Tools",
-    },
-    {
-      name: "Owners",
-    },
-  ];
+  const dispatch = useDispatch<AppDispatch>();
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>("Cars & Minivan");
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await fetch("/api/products");
+      const data = await res.json();
+      dispatch(setProducts(data));
+    };
+    fetchProducts();
+  }, [dispatch]);
 
   return (
-    <div className="flex items-center border-transparent">
-      <div className="flex space-x-4 items-center">
-        <DropdownMenu>
-          <DropdownMenuTrigger className="flex space-x-1 items-center font-semibold border-transparent">
-            {navLinks.map((link) => (
-              <div
-                key={link.name}
-                className={`border-transparent ${
-                  pathName === link.name
-                    ? "border-transparent"
-                    : "hover:border hover:border-gray-800 px-4 py-1 rounded-full  cursor-pointer"
-                } flex items-center`}
-              >
-                {link.name} <MdKeyboardArrowDown size={20} />
-              </div>
-            ))}
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuItem className="h-[800px] w-screen">
-              <div></div>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </div>
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="flex items-center space-x-1 font-semibold px-4  rounded-full hover:bg-gray-100 transition pt-2">
+          <span>Vehicles</span>
+          <MdKeyboardArrowDown size={20} />
+        </button>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent
+        className="w-screen mt-4 p-6 border shadow-xl bg-white"
+        align="start"
+      >
+        <div className="w-full flex flex-col">
+          <CategoryBar
+            selectedCategory={selectedCategory}
+            onCategorySelect={setSelectedCategory}
+          />
+          <CarsandMinivan selectedCategory={selectedCategory} />
+        </div>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -18,7 +18,7 @@ export default function LoginDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger>
         {!session ? (
-          <RxAvatar size={30} />
+          <RxAvatar size={30} className="cursor-pointer" />
         ) : (
           <Image
             src={session.user?.image as string}

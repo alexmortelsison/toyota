@@ -1,28 +1,44 @@
 "use client";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
+import Image from "next/image";
 
-const slides = ["/supra.avif"];
-
-type CarouselPageProps = {
-  children: React.ReactNode; // Accepts any React content, including video elements
+type Slide = {
+  image: string;
+  title: string;
+  subtitle: string;
 };
 
-export default function CarouselPage({ children }: CarouselPageProps) {
+type CarouselPageProps = {
+  slides: Slide[];
+};
+
+export default function CarouselPage({ slides }: CarouselPageProps) {
   const [current, setCurrent] = useState(0);
 
   const prev = () =>
-    setCurrent((current) => (current == 0 ? slides.length - 1 : current - 1));
+    setCurrent((current) => (current === 0 ? slides.length - 1 : current - 1));
   const next = () =>
-    setCurrent((current) => (current == slides.length - 1 ? 0 : current + 1));
+    setCurrent((current) => (current === slides.length - 1 ? 0 : current + 1));
+
   return (
     <div className="overflow-hidden relative">
       <div
         className="flex transition-transform ease-out duration-500"
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
-        {children}
+        {slides.map((slide, index) => (
+          <Image
+            key={index}
+            src={slide.image}
+            alt={`slide-${index}`}
+            width={1920}
+            height={1080}
+            className="object-cover min-w-full brightness-80 h-[80vh]"
+          />
+        ))}
       </div>
+
       <div className="absolute inset-0 flex items-center justify-between p-4">
         <button
           onClick={prev}
@@ -37,13 +53,26 @@ export default function CarouselPage({ children }: CarouselPageProps) {
           <ChevronRight size={40} />
         </button>
       </div>
+
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none pt-72">
+        <h1 className="text-white font-semibold text-7xl whitespace-pre-line">
+          {slides[current].title}
+        </h1>
+        <p className="text-gray-200 pt-4 text-2xl">
+          {slides[current].subtitle}
+        </p>
+        <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto">
+          Learn More
+        </button>
+      </div>
+
       <div className="absolute bottom-4 right-0 left-0">
         <div className="flex items-center justify-center gap-2">
           {slides.map((_, i) => (
             <div
-              key={""}
-              className={`transition-all w-2 h-2 bg-white rounded-full ${
-                current === i ? "p-1" : "bg-white/20"
+              key={i}
+              className={`transition-all w-2 h-2 rounded-full ${
+                current === i ? "bg-white p-1" : "bg-white/20"
               }`}
             />
           ))}

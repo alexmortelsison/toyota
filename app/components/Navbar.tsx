@@ -1,8 +1,7 @@
-import { BsHeart } from "react-icons/bs";
 import { RxAvatar } from "react-icons/rx";
+import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
 import NavigationMenuBar from "./NavigationMenuBar";
-import SearchInventory from "./SearchInventory";
 
 export default function Navbar() {
   return (
@@ -14,15 +13,15 @@ export default function Navbar() {
         height={100}
         className="object-cover"
       />
-      <div className="flex items-center">
-        <div className="pr-12">
+      <div className="flex items-center space-x-8">
+        <div>
           <NavigationMenuBar />
         </div>
-        <div className="pr-2">
-          <SearchInventory />
+        <div>
+          <p>Search Inventory</p>
         </div>
-        <div className="flex items-center space-x-4 pl-8">
-          <BsHeart size={30} />
+        <div className="flex items-center space-x-2">
+          <AiOutlineHeart size={30} />
           <RxAvatar size={30} />
         </div>
       </div>

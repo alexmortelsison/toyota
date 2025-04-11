@@ -1,31 +1,42 @@
+import { MdKeyboardArrowDown } from "react-icons/md";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function NavigationMenuBar() {
+  const navLinks = [
+    {
+      name: "Vehicles",
+    },
+    {
+      name: "Shipping Tools",
+    },
+    {
+      name: "Owners",
+    },
+  ];
+
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-lg tracking-wide">
-            Vehicles
-          </NavigationMenuTrigger>
-          <NavigationMenuTrigger className="text-lg tracking-wide">
-            Shopping Tools
-          </NavigationMenuTrigger>
-          <NavigationMenuTrigger className="text-lg tracking-wide">
-            Owners
-          </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <NavigationMenuLink>Link</NavigationMenuLink>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <div className="flex items-center">
+      <div className="flex space-x-4 items-center">
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex space-x-6 items-center font-semibold">
+            {navLinks.map((link) => (
+              <div key={link.name} className="flex items-center cursor-pointer">
+                {link.name} <MdKeyboardArrowDown size={20} />
+              </div>
+            ))}
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem className="h-[800px] w-screen">
+              <div></div>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+    </div>
   );
 }

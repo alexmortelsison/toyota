@@ -21,6 +21,11 @@ const slides = [
     title: "2026 GR86",
     subtitle: "The ultimate game changer.",
   },
+  {
+    video: "/mirai.mp4",
+    title: "2025 Mirai",
+    subtitle: "Powerfully efficient. Zero tailpipe emissions.",
+  },
 ];
 
 export default function Hero() {

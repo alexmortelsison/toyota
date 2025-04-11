@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 type Slide = {
-  image: string;
+  image?: string;
+  video?: string;
   title: string;
   subtitle: string;
 };
@@ -28,14 +29,26 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <Image
-            key={index}
-            src={slide.image}
-            alt={`slide-${index}`}
-            width={1920}
-            height={1080}
-            className="object-cover min-w-full brightness-80 h-[80vh]"
-          />
+          <div key={index} className="min-w-full h-[80vh] relative">
+            {slide.video ? (
+              <video
+                src={slide.video}
+                className="object-cover w-full h-full brightness-80"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <Image
+                src={slide.image!}
+                alt={`slide-${index}`}
+                width={1920}
+                height={1080}
+                className="object-cover w-full h-full brightness-80"
+              />
+            )}
+          </div>
         ))}
       </div>
 

@@ -23,8 +23,8 @@ export default function LoginDropdown() {
           <Image
             src={session.user?.image as string}
             alt="user"
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             className="object-cover rounded-full"
           />
         )}

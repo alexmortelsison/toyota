@@ -1,7 +1,7 @@
-import { RxAvatar } from "react-icons/rx";
 import { AiOutlineHeart } from "react-icons/ai";
 import Image from "next/image";
 import NavigationMenuBar from "./NavigationMenuBar";
+import LoginDropdown from "./LoginDropdown";
 
 export default function Navbar() {
   return (
@@ -22,7 +22,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center space-x-2">
           <AiOutlineHeart size={30} />
-          <RxAvatar size={30} />
+          <LoginDropdown />
         </div>
       </div>
     </div>

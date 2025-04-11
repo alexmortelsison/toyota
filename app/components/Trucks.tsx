@@ -8,7 +8,7 @@ interface Props {
   selectedCategory: string;
 }
 
-export default function CarsandMinivan({ selectedCategory }: Props) {
+export default function Trucks({ selectedCategory }: Props) {
   const products = useSelector((state: RootState) => state.product.products);
 
   const filteredProducts = selectedCategory

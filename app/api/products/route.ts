@@ -86,6 +86,34 @@ export async function GET() {
       image: "/vehicles/sienna.webp",
       category: "Cars & Minivan",
     },
+    {
+      id: "13",
+      name: "2025 Tacoma",
+      price: 31590,
+      image: "/vehicles/tacoma.webp",
+      category: "Trucks",
+    },
+    {
+      id: "14",
+      name: "2025 Tacoma i-FORCE MAX",
+      price: 46320,
+      image: "/vehicles/tacomaiforcemax.webp",
+      category: "Trucks",
+    },
+    {
+      id: "15",
+      name: "2025 Tundra",
+      price: 40090,
+      image: "/vehicles/tundra.webp",
+      category: "Trucks",
+    },
+    {
+      id: "16",
+      name: "2025 Tundra i-FORCE MAX",
+      price: 58005,
+      image: "/vehicles/tundraiforcemax.webp",
+      category: "Trucks",
+    },
   ];
   return NextResponse.json(vehicles);
 }

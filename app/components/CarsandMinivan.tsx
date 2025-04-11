@@ -1,43 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/store/store"; // adjust path if needed
 import Image from "next/image";
-
-interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category: string;
-}
 
 interface Props {
   selectedCategory: string;
 }
 
 export default function CarsandMinivan({ selectedCategory }: Props) {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const products = useSelector((state: RootState) => state.product.products);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const res = await fetch("/api/products");
-      const data = await res.json();
-      setProducts(data);
-    };
-    fetchProducts();
-  }, []);
-
-  useEffect(() => {
-    if (selectedCategory) {
-      const filtered = products.filter(
-        (product) => product.category === selectedCategory
-      );
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [selectedCategory, products]);
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12 mb-16">

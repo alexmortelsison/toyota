@@ -1,3 +1,4 @@
+"use client";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import {
   DropdownMenu,
@@ -5,8 +6,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { usePathname } from "next/navigation";
 
 export default function NavigationMenuBar() {
+  const pathName = usePathname();
   const navLinks = [
     {
       name: "Vehicles",
@@ -20,12 +23,19 @@ export default function NavigationMenuBar() {
   ];
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center border-transparent">
       <div className="flex space-x-4 items-center">
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex space-x-6 items-center font-semibold">
+          <DropdownMenuTrigger className="flex space-x-1 items-center font-semibold border-transparent">
             {navLinks.map((link) => (
-              <div key={link.name} className="flex items-center cursor-pointer">
+              <div
+                key={link.name}
+                className={`border-transparent ${
+                  pathName === link.name
+                    ? "border-transparent"
+                    : "hover:border hover:border-gray-800 px-4 py-1 rounded-full  cursor-pointer"
+                } flex items-center`}
+              >
                 {link.name} <MdKeyboardArrowDown size={20} />
               </div>
             ))}

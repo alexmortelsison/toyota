@@ -33,12 +33,12 @@ export default function LoginDropdown() {
         <DropdownMenuLabel className=" items-center flex justify-center mt-8">
           <h1 className="text-lg font-bold">My Toyota</h1>
         </DropdownMenuLabel>
-        <DropdownMenuLabel className="flex items-center space-x-4 pt-6">
+        <DropdownMenuLabel className="flex items-center space-x-4 pt-6 cursor-pointer hover:underline underline-offset-4">
           <AiOutlineHeart size={20} />
           <p className="">My Saves</p>
         </DropdownMenuLabel>
         <Separator className="mt-2" />
-        <DropdownMenuLabel className="flex items-center space-x-4 pt-4">
+        <DropdownMenuLabel className="flex items-center space-x-4 pt-4 cursor-pointer hover:underline underline-offset-4">
           <BiCart size={20} />
           <p className="">My Cart</p>
         </DropdownMenuLabel>

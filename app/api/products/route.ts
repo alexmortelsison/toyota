@@ -114,6 +114,48 @@ export async function GET() {
       image: "/vehicles/tundraiforcemax.webp",
       category: "Trucks",
     },
+    {
+      id: "17",
+      name: "2025 Corolla Cross",
+      price: 24135,
+      image: "/vehicles/cross.webp",
+      category: "Crossovers & SUVs",
+    },
+    {
+      id: "18",
+      name: "2025 Corolla Cross Hybrid",
+      price: 28495,
+      image: "/vehicles/crosshybrid.webp",
+      category: "Crossovers & SUVs",
+    },
+    {
+      id: "19",
+      name: "2025 Rav4",
+      price: 29250,
+      image: "/vehicles/rav4.webp",
+      category: "Crossovers & SUVs",
+    },
+    {
+      id: "20",
+      name: "2025 Rav4 Hybrid",
+      price: 32300,
+      image: "/vehicles/rav4hybrid.webp",
+      category: "Crossovers & SUVs",
+    },
+    {
+      id: "21",
+      name: "2025 Rav4 Plug-in Hybrid",
+      price: 44265,
+      image: "/vehicles/rav4pluginhybrid.webp",
+      category: "Crossovers & SUVs",
+    },
+    {
+      id: "22",
+      name: "2025 Highlander",
+      price: 39820,
+      image: "/vehicles/highlander.webp",
+      category: "Crossovers & SUVs",
+    },
   ];
   return NextResponse.json(vehicles);
 }

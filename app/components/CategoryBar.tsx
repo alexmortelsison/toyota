@@ -9,7 +9,6 @@ const categoryLinks = [
   { name: "Cars & Minivan" },
   { name: "Trucks" },
   { name: "Crossovers & SUVs" },
-  { name: "Electrified" },
   { name: "Upcoming Vehicles" },
 ];
 

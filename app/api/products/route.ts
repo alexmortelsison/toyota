@@ -156,6 +156,20 @@ export async function GET() {
       image: "/vehicles/highlander.webp",
       category: "Crossovers & SUVs",
     },
+    {
+      id: "23",
+      name: "2026 GR Supra MkV Final",
+      price: 0,
+      image: "/vehicles/grsupramkvfinal.webp",
+      category: "Upcoming Vehicles",
+    },
+    {
+      id: "24",
+      name: "2026 GR86 Yuzu Edition",
+      price: 0,
+      image: "/vehicles/gr86yuzuedition.webp",
+      category: "Upcoming Vehicles",
+    },
   ];
   return NextResponse.json(vehicles);
 }

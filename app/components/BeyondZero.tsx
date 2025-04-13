@@ -4,7 +4,6 @@ import Link from "next/link";
 export default function BeyondZero() {
   return (
     <div className="min-h-full">
-      <h1 className="text-center text-5xl font-semibold pb-12">Beyond Zero</h1>
       <div className="relative">
         <Image
           src={"/bz.avif"}
@@ -29,7 +28,7 @@ export default function BeyondZero() {
             </p>
             <Link href={"/beyondzero"}>
               <button className="absolute left-20 mt-12 text-nowrap flex justify-center items-center bg-white rounded-full py-2 px-8 font-semibold cursor-pointer hover:opacity-80">
-                Exlore Beyond Zero.
+                Explore Beyond Zero.
               </button>
             </Link>
           </div>

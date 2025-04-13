@@ -1,6 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Product {
+  badge: any;
+  msrpAsShown: any;
+  year: ReactNode;
+  mpg: any;
   id: string;
   name: string;
   price: number;

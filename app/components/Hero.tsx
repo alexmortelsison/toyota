@@ -1,4 +1,5 @@
 import CarouselPage from "./CarouselPage";
+import ExploreAllVehicles from "./ExploreAllVehicles";
 
 const slides = [
   {
@@ -32,6 +33,7 @@ export default function Hero() {
   return (
     <div className="relative">
       <CarouselPage slides={slides}></CarouselPage>
+      <ExploreAllVehicles />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Slide = {
   image?: string;
@@ -74,9 +75,11 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
         <p className="text-gray-200 pt-4 text-2xl">
           {slides[current].subtitle}
         </p>
-        <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto">
-          Learn More
-        </button>
+        <Link href={"/grsupra"}>
+          <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto">
+            Learn More
+          </button>
+        </Link>
       </div>
 
       <div className="absolute bottom-4 right-0 left-0">

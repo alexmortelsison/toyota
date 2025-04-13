@@ -47,7 +47,7 @@ export default function ExploreAllVehicles(): JSX.Element {
   };
 
   return (
-    <div className="mt-20 px-4">
+    <div className="mt-28 px-4">
       <h1 className="text-5xl text-center font-bold mb-10">
         Explore All Vehicles
       </h1>
@@ -121,7 +121,7 @@ export default function ExploreAllVehicles(): JSX.Element {
             <button
               onClick={handlePrev}
               disabled={currentPage === 0}
-              className={`rounded-full w-10 h-10 flex items-center justify-center transition ${
+              className={`rounded-full w-10 h-10 flex items-center justify-center transition hover:cursor-pointer ${
                 currentPage === 0
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-white border hover:bg-gray-100"
@@ -137,7 +137,7 @@ export default function ExploreAllVehicles(): JSX.Element {
             <button
               onClick={handleNext}
               disabled={currentPage === totalPages - 1}
-              className={`rounded-full w-10 h-10 flex items-center justify-center transition ${
+              className={`rounded-full w-10 h-10 flex items-center justify-center transition hover:cursor-pointer ${
                 currentPage === totalPages - 1
                   ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                   : "bg-black text-white hover:bg-black/90"

@@ -16,7 +16,7 @@ export default function ModelViewer() {
         width: "100%",
         height: "800px",
       }}
-      camera={{ position: [0, 0, 3] }}
+      camera={{ position: [-3, 1, 6] }}
     >
       <ambientLight intensity={0.5} />
       <Environment preset="sunset" />

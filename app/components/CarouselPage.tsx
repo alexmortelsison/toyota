@@ -77,7 +77,7 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
           {slides[current].subtitle}
         </p>
         <Link href={slides[current].href}>
-          <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto">
+          <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto cursor-pointer hover:opacity-90">
             Learn More
           </button>
         </Link>

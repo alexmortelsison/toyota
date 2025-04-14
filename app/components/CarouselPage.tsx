@@ -9,6 +9,7 @@ type Slide = {
   video?: string;
   title: string;
   subtitle: string;
+  href: string;
 };
 
 type CarouselPageProps = {
@@ -75,7 +76,7 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
         <p className="text-gray-200 pt-4 text-2xl">
           {slides[current].subtitle}
         </p>
-        <Link href={"/grsupra"}>
+        <Link href={slides[current].href}>
           <button className="mt-16 bg-white px-8 py-2 rounded-full font-semibold pointer-events-auto">
             Learn More
           </button>

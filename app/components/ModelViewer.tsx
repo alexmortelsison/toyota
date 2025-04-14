@@ -4,25 +4,25 @@ import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment, useGLTF } from "@react-three/drei";
 
-function SupraModel() {
-  const { scene } = useGLTF("/supra.glb");
-  return <primitive object={scene} scale={1} />;
-}
+export default function ModelViewerPage() {
+  const { scene } = useGLTF("/scene.gltf");
 
-export default function ModelViewer() {
   return (
     <Canvas
-      style={{
-        width: "100%",
-        height: "800px",
-      }}
-      camera={{ position: [-3, 1, 6] }}
+      style={{ width: "100%", height: "300px" }}
+      camera={{ position: [2, 1.2, 5], fov: 30 }}
     >
       <ambientLight intensity={0.5} />
       <Environment preset="sunset" />
-      <OrbitControls />
+      <OrbitControls
+        enablePan={false}
+        enableZoom={false}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+        target={[0, 1.2, 0]}
+      />
       <Suspense fallback={null}>
-        <SupraModel />
+        <primitive object={scene} scale={1} position={[0, 0.4, 0]} />
       </Suspense>
     </Canvas>
   );

@@ -1,6 +1,7 @@
 import ModelViewerPage from "../components/ModelViewer";
 import Interior from "../components/Interior";
 import PerformanceHandling from "../components/PerformanceHandling";
+import MoreFeatures from "../components/MoreFeatures";
 
 export default function GrSupraPage() {
   return (
@@ -43,6 +44,7 @@ export default function GrSupraPage() {
       </div>
       <Interior />
       <PerformanceHandling />
+      <MoreFeatures />
     </div>
   );
 }

@@ -14,7 +14,7 @@ export default function GrSupraPage() {
         razor-sharp handling and a race-ready design are geared to subvert your
         every expectation.
       </p>
-
+      <ModelViewerPage />
       <div className="h-[300px] bg-[#cfcac7] mt-24 grid grid-cols-3 place-items-center px-24">
         <div className="">
           <h1 className="text-7xl font-semibold">GR Supra Highlights</h1>

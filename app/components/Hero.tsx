@@ -12,7 +12,7 @@ const slides = [
     image: "/crown.avif",
     title: "2026 Toyota Crown",
     subtitle: "Innovation that makes a statement.",
-    href: "/grsupra",
+    href: "/crown",
   },
   {
     image: "/sequoia.avif",

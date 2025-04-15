@@ -10,7 +10,7 @@ export default function MoreFeatures() {
         Track-ready tech at every turn.
       </h1>
       <div className="grid grid-cols-2 px-16 gap-x-12 pt-12">
-        <div>
+        <div className="relative">
           <Image
             src={"/safety.avif"}
             alt="photo"
@@ -18,8 +18,11 @@ export default function MoreFeatures() {
             height={1000}
             className="object-cover h-[50%]"
           />
+          <p className="absolute top-10 right-2/7 text-white text-4xl font-bold">
+            Safety & Convenience
+          </p>
         </div>
-        <div>
+        <div className="relative">
           <Image
             src={"/grfamily.avif"}
             alt="photo"
@@ -27,6 +30,9 @@ export default function MoreFeatures() {
             height={1000}
             className="object-cover h-[50%]"
           />
+          <p className="absolute top-10 right-2/5 text-white text-4xl font-bold">
+            GR Family
+          </p>
         </div>
       </div>
     </div>

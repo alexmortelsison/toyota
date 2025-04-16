@@ -1,7 +1,7 @@
-import MoreFeatures from "../components/MoreFeatures";
 import ModelViewerPageCrown from "../components/ModelViewerCrown";
 import InteriorCrown from "../components/InteriorCrown";
 import PerformanceHandlingCrown from "../components/PerformanceHandlingCrown";
+import MoreFeaturesCrown from "../components/MoreFeaturesCrown";
 
 export default function CrownPage() {
   return (
@@ -44,7 +44,7 @@ export default function CrownPage() {
       </div>
       <InteriorCrown />
       <PerformanceHandlingCrown />
-      <MoreFeatures />
+      <MoreFeaturesCrown />
     </div>
   );
 }

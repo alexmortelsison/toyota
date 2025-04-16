@@ -1,7 +1,7 @@
 import ModelViewerPage from "../components/ModelViewerSupra";
 import InteriorSupra from "../components/InteriorSupra";
 import PerformanceHandlingSupra from "../components/PerformanceHandlingSupra";
-import MoreFeatures from "../components/MoreFeatures";
+import MoreFeatures from "../components/MoreFeaturesSupra";
 
 export default function GrSupraPage() {
   return (

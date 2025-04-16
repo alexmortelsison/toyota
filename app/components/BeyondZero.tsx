@@ -26,7 +26,7 @@ export default function BeyondZero() {
             <p className="text-nowrap text-gray-300 text-4xl font-semibold">
               Drive change your way.
             </p>
-            <Link href={"/beyondzero"}>
+            <Link href={"/explorebeyondzero"}>
               <button className="absolute left-20 mt-12 text-nowrap flex justify-center items-center bg-white rounded-full py-2 px-8 font-semibold cursor-pointer hover:opacity-80">
                 Explore Beyond Zero.
               </button>

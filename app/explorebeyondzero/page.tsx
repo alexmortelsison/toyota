@@ -23,6 +23,31 @@ export default function ExploreBeyondZeroPage() {
         </p>
         <ThePowerOfChoice />
       </div>
+      <div className="h-[300px] bg-[#020d26] mt-24 grid grid-cols-3 place-items-center px-24 text-white">
+        <div className="">
+          <h1 className="text-7xl font-semibold">Power in Numbers</h1>
+        </div>
+        <div>
+          <div className="border-t border-b border-[#a6a19e] pt-4 pb-12">
+            <h1>ELECTRIFIED VEHICLES SOLD BY TOYOTA GLOBALLY IN 2022</h1>
+            <p className="font-semibold">2.73 Million</p>
+          </div>
+          <div className="pt-4">
+            <h1>WASTE RECYCLED, REUSED OR RECYCLED IN 2023</h1>
+            <p className="font-semibold">93%</p>
+          </div>
+        </div>
+        <div>
+          <div className="border-t border-b border-[#a6a19e] pt-4 pb-12">
+            <h1>TOYOTA MODELS WITH AN ELECTRIFIED OPTION</h1>
+            <p className="font-semibold">77% as of 2023</p>
+          </div>
+          <div className="pt-4">
+            <h1>TOTAL RENEWABLE ELECTRICITY PURCHASED IN 2023</h1>
+            <p className="font-semibold">380,688 MWH</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

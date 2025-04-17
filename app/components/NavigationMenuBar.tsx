@@ -10,8 +10,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import CategoryBar from "./CategoryBar";
 import CarsandMinivan from "./CarsandMinivan";
-import { setProducts } from "@/app/store/features/productSlice";
 import { AppDispatch } from "@/app/store/store";
+import { setProducts } from "../store/features/productSlice";
 
 export default function NavigationMenuBar() {
   const dispatch = useDispatch<AppDispatch>();

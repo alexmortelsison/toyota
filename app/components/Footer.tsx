@@ -5,9 +5,9 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
   return (
-    <div className="bg-gray-100 px-16 pt-24">
-      <div className="flex justify-between items-center pt-24">
-        <div className="flex items-center space-x-8">
+    <div className="bg-gray-100 px-8 2xl:px-16 pt-24 md:block hidden md:px-8">
+      <div className="justify-between items-center pt-24 sm:flex sm:justify-center hidden">
+        <div className="flex items-center space-x-8 sm:hidden lg:inline-flex">
           <Link href={"/accessibility"}>
             <p className="font-semibold">Accessibility</p>
           </Link>

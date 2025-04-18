@@ -5,19 +5,21 @@ import MoreFeatures from "../components/MoreFeaturesSupra";
 
 export default function GrSupraPage() {
   return (
-    <div className="min-h-screen items-center bg-gradient-to-b from bg-slate-300 via-white to-gray-200">
-      <h1 className="text-7xl font-semibold flex justify-center pt-24">
+    <div className="min-h-screen items-center bg-gradient-to-b from bg-slate-300 via-white to-gray-200 md:block hidden">
+      <h1 className="text-7xl font-semibold flex justify-center pt-24 md:px-24 md:text-center">
         The ultimate rush hour.
       </h1>
-      <p className="text-2xl w-[42%] mx-auto text-center py-16 text-gray-800">
+      <p className="text-2xl lg:w-[42%] md:px-8 mx-auto text-center py-16 text-gray-800">
         Drive into the adrenaline-fueled world of GR Supra, where raw power,
         razor-sharp handling and a race-ready design are geared to subvert your
         every expectation.
       </p>
       <ModelViewerPage />
-      <div className="h-[300px] bg-[#cfcac7] mt-24 grid grid-cols-3 place-items-center px-24">
+      <div className="h-[300px] bg-[#cfcac7] mt-24 grid grid-cols-3 place-items-center lg:px-24 px-2">
         <div className="">
-          <h1 className="text-7xl font-semibold">GR Supra Highlights</h1>
+          <h1 className="lg:text-7xl font-semibold md:text-5xl">
+            GR Supra Highlights
+          </h1>
         </div>
         <div>
           <div className="border-t border-b border-[#a6a19e] pt-4 pb-12">

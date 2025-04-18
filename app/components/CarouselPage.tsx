@@ -47,7 +47,7 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
                 alt={`slide-${index}`}
                 width={1920}
                 height={1080}
-                className="object-cover w-full h-full brightness-80"
+                className="object-cover object-fit w-[400px] md:w-[800px] lg:w-full h-full brightness-80"
               />
             )}
           </div>
@@ -69,8 +69,8 @@ export default function CarouselPage({ slides }: CarouselPageProps) {
         </button>
       </div>
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none pt-72">
-        <h1 className="text-white font-semibold text-7xl whitespace-pre-line">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-none md:pt-72">
+        <h1 className="text-white font-semibold text-2xl md:text-4xl lg:text-7xl whitespace-pre-line">
           {slides[current].title}
         </h1>
         <p className="text-gray-200 pt-4 text-2xl">

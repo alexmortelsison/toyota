@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <div className="bg-white flex justify-between px-32 py-4 items-center">
+    <div className="bg-white flex justify-between px-4 md:px-32 py-4 items-center">
       <Link href={"/"}>
         <Image
           src={"/logo.png"}
@@ -19,7 +19,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <NavigationMenuBar />
         </div>
-        <div>
+        <div className="md:flex hidden">
           <p>Search Inventory</p>
         </div>
         <div className="flex items-center space-x-2">
